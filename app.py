@@ -44,7 +44,7 @@ def despesas_dep (ano, ids):
 
 #-------------------------------------------
 #função 2---------------------------------
-@st.cache_data
+
 def criar_grafico_1 (despesas):
   #Criar graáfico agrupando por tipo de despesas de Cada grupo.
   # Agrupe os dados por 'tipoDespesa' e 'tipoDocumento' e some o 'valorLiquido'
@@ -66,7 +66,7 @@ def criar_grafico_1 (despesas):
   return fig
 
 #funcao 3 -------------------
-@st.cache_data
+
 def criar_grafico_2(despesas):
 
   # Supondo que seu DataFrame seja chamado 'despesas'
