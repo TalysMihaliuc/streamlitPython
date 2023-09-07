@@ -1,6 +1,8 @@
-streamlit
+streamlit as st
 requests
 json
 pandas
 plotly
+base64
 openpyxl
+io
