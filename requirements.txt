@@ -1,8 +1,5 @@
 streamlit
 requests
-json
 pandas
 plotly
-base64
 openpyxl
-io
