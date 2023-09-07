@@ -13,7 +13,7 @@ import io
 anos=['2023']
 
 #função 1  -----------------------------------------------------------------------------
-@st.cache_data
+
 def despesas_dep (ano, ids):
   despesas = pd.DataFrame()
 
