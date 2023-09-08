@@ -11,7 +11,7 @@ import io
 anos=['2023']
 
 #função 1  -----------------------------------------------------------------------------
-
+@st.cache
 def despesas_dep (ano, ids):
   despesas = pd.DataFrame()
 
@@ -42,7 +42,7 @@ def despesas_dep (ano, ids):
 
 #-------------------------------------------
 #função 2---------------------------------
-
+@st.cache
 def criar_grafico_1 (despesas):
   #Criar graáfico agrupando por tipo de despesas de Cada grupo.
   # Agrupe os dados por 'tipoDespesa' e 'tipoDocumento' e some o 'valorLiquido'
@@ -64,7 +64,7 @@ def criar_grafico_1 (despesas):
   return fig
 
 #funcao 3 -------------------
-
+@st.cache
 def criar_grafico_2(despesas):
 
   # Supondo que seu DataFrame seja chamado 'despesas'
@@ -95,7 +95,7 @@ def criar_grafico_2(despesas):
 #------------------------------------FUNÇÃO 3 --------------------------------
 
 
-
+@st.cache
 def listar_notas(selected_fornecedor, despesas):
     notas_relacionadas = list(despesas[(despesas['nomeFornecedor'].str.contains(selected_fornecedor, case=False))
                                        & (despesas['urlDocumento'].notnull())]['urlDocumento'])
