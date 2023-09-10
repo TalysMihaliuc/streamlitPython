@@ -30,9 +30,21 @@ def despesas_dep (ano, ids):
                   despesas = pd.concat([despesas, df_gasto], ignore_index=True)
 
                   pagina=pagina+1
+                  # DataFrame Resultado das 'despesas' por fornecedor
+                  resultado = despesas[['cnpjCpfFornecedor', 'nomeFornecedor']].drop_duplicates(subset='cnpjCpfFornecedor', keep='first').reset_index(drop=True)
+                
+                  # Transforme o DataFrame em um dicionário
+                  dicionario_despesas = dict(zip(resultado['cnpjCpfFornecedor'], resultado['nomeFornecedor']))
+                
+                  # Aplicar o dicionário para substituir os valores da coluna 'nomeFornecedor'
+                  despesas['nomeFornecedor'] = despesas['cnpjCpfFornecedor'].map(dicionario_despesas)
+                
+                  # Deixar todas em maiusculo
+                  despesas['nomeFornecedor'] = despesas['nomeFornecedor'].str.upper()
 
               except requests.exceptions.RequestException:
                   pass
+              
 
 
   return despesas
