@@ -30,10 +30,9 @@ def despesas_dep (ano, ids):
                   despesas = pd.concat([despesas, df_gasto], ignore_index=True)
 
                   pagina=pagina+1
-               
+
               except requests.exceptions.RequestException:
                   pass
-              
 
 
   return despesas
@@ -67,7 +66,6 @@ def criar_grafico_1 (despesas):
 #funcao 3 -------------------
 @st.cache
 def criar_grafico_2(despesas):
-
 
   # Supondo que seu DataFrame seja chamado 'despesas'
   # Agrupe os dados por 'nomeFornecedor' e some o 'valorLiquido'
